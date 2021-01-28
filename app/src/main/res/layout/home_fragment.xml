@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="args"
+            type="com.delaroystudios.lessons.ui.home.HomeFragmentArgs" />
+
+        <import type="com.delaroystudios.lessons.vo.Status" />
+
+        <import type="com.delaroystudios.lessons.vo.Resource" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subject_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layoutManager="GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/subject_item"/>
+
+            <TextView
+                android:id="@+id/recentlyWatchedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subject_recyclerview"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/notosans_bold"
+                android:padding="12dp"
+                android:text="@string/recently_watched_topics"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:id="@+id/recent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/recentlyWatchedText">
+                <ImageView
+                    android:id="@+id/no_da"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/no_da"
+                    android:layout_marginTop="40dp"
+                     />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_below="@+id/no_da"
+                    android:textColor="@color/black"
+                    android:text="@string/no_recently_watched_video"  />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recently_watched_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/recentlyWatchedText"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recently_item"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

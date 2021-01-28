@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.delaroystudios.lessons.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+
+        <action
+            android:id="@+id/showLesson"
+            app:destination="@id/lessonsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.delaroystudios.lessons.ui.lessons.LessonsFragment"
+        android:label="LessonsFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_lessonsFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.delaroystudios.lessons.ui.player.PlayerFragment"
+        android:label="PlayerFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="mediaurl"
+            app:argType="string" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="chapter"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_playerFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+    </fragment>
+</navigation>

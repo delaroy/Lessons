@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">E-Lesson</string>
+    <string name="simbi">Hello Simbi</string>
+    <string name="hello_simbi">Hello Simbi</string>
+    <string name="recently_watched_topics">Recently watched topics</string>
+    <string name="no_recently_watched_video">No recently watched video</string>
+</resources>
