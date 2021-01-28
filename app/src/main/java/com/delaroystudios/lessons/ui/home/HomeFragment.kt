@@ -23,6 +23,7 @@ import com.delaroystudios.lessons.ui.common.SubjectListAdapter
 import com.delaroystudios.lessons.util.autoCleared
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -82,23 +83,32 @@ class HomeFragment : Fragment(), Injectable {
         ) { lesson ->
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPlayerFragment(lesson.lessonName, lesson.mediaUrl, lesson.subjectName, lesson.id, lesson.chapterName))
         }
+
+
         binding.subjectRecyclerview.adapter = rvAdapter
         this.adapter = rvAdapter
 
         binding.recentlyWatchedRecyclerview.adapter = rwAdapter
         this.madapter = rwAdapter
-        initRepoList()
+
+        GlobalScope.launch(context = Dispatchers.Main) {
+            delay(1000)
+
+            initRepoList()
+
+        }
     }
 
     private fun initRepoList() {
         subjectViewModel.repositories.observe(viewLifecycleOwner, Observer { repos ->
             adapter.submitList(repos?.data)
+
         })
 
         recentlyWatchedViewModel.repositories.observe(viewLifecycleOwner, Observer { rep ->
             madapter.submitList(rep?.data)
             GlobalScope.launch(context = Dispatchers.Main) {
-                Thread.sleep(4000)
+                delay(2000)
                 if (rep.data != null) {
                     if (rep?.data?.size!! < 1) {
                         binding.recent.visibility = View.VISIBLE
