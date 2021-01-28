@@ -4,4 +4,7 @@
     <string name="hello_simbi">Hello Simbi</string>
     <string name="recently_watched_topics">Recently watched topics</string>
     <string name="no_recently_watched_video">No recently watched video</string>
+    <string name="lesson_icon">lesson icon</string>
+    <string name="full_screen">full screen</string>
+    <string name="no_content">No content</string>
 </resources>

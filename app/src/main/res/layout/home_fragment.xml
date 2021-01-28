@@ -40,7 +40,8 @@
                 android:padding="12dp"
                 android:text="@string/recently_watched_topics"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
+
 
             <RelativeLayout
                 android:id="@+id/recent"
@@ -54,7 +55,7 @@
                     android:layout_height="70dp"
                     android:src="@drawable/no_da"
                     android:layout_marginTop="40dp"
-                     />
+                    android:contentDescription="@string/no_content" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

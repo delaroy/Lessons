@@ -18,18 +18,18 @@ displays the recently watched topic video thumbnails with title and description
 
 #### LessonsFragment
 This fragment displays the lessons oof each subject in a horizontal scrolling
-recyclerview categorized and grouped by there chapters
+recyclerview categorized and grouped by their chapters
 
 #### PlayerFragment
 This fragment displays the media content of each lessons using exoplayer for video playbacks
-and lesson title with corresponding chapter name are also displayed
+and lesson title with corresponding chapter name displayed
 
 ### Building
 You can open the project in Android studio and press run.
 
 ### Architectural Decisions
 The architectural design is a Model View and ViewModel(MVVM) approach with separation of concerns
-in the repository where the data source of truth are decided either to may a network call or fetch
+in the repository where the data source of truth are decided either to make a network call or fetch
 from the internal database.
 
 This approach is made possible using Dagger dependency injection to make object interaction
@@ -76,6 +76,7 @@ The project uses [MockWebServer][mockwebserver] project to test REST api interac
 * [Dagger 2][dagger2] for dependency injection
 * [Retrofit][retrofit] for REST api communication
 * [Glide][glide] for image loading
+* [Exoplayer][exoplayer] application level media player
 * [Timber][timber] for logging
 * [espresso][espresso] for UI tests
 * [mockito][mockito] for mocking in tests
@@ -89,6 +90,7 @@ The project uses [MockWebServer][mockwebserver] project to test REST api interac
 [dagger2]: https://google.github.io/dagger
 [retrofit]: http://square.github.io/retrofit
 [glide]: https://github.com/bumptech/glide
+[exoplayer]: https://exoplayer.dev/
 [timber]: https://github.com/JakeWharton/timber
 [mockito]: http://site.mockito.org
 

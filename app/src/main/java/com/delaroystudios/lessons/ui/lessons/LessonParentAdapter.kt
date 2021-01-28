@@ -51,8 +51,9 @@ class LessonParentAdapter(private val parents : List<String>, private val lesson
                     items,
                     context
                 )
-                setRecycledViewPool(viewPool)
             }
+
+            setRecycledViewPool(viewPool)
 
         }
     }

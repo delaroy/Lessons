@@ -66,8 +66,7 @@ class HomeFragment : Fragment(), Injectable {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        (activity as AppCompatActivity).supportActionBar?.show()
-        (activity as AppCompatActivity).supportActionBar?.title = "Hello SImbi"
+        (activity as AppCompatActivity).supportActionBar?.title = "Hello Simbi"
         binding.args = params
         binding.lifecycleOwner = viewLifecycleOwner
         val rvAdapter = SubjectListAdapter(
@@ -111,9 +110,5 @@ class HomeFragment : Fragment(), Injectable {
                 }
             }
         })
-
-
-        //run excute in background
-       //appExecutors.diskIO().execute({ mDb.foodDao().insertFood(foodEntry) })
     }
 }

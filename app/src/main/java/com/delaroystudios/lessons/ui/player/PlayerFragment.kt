@@ -63,14 +63,7 @@ class PlayerFragment : Fragment(), Injectable {
 
         binding = dataBinding
 
-        /*dataBinding.retryCallback = object : RetryCallback {
-            override fun retry() {
-                repoViewModel.retry()
-            }
-        }
-        binding = dataBinding
-        sharedElementReturnTransition = TransitionInflater.from(context).inflateTransition(R.transition.move)
-*/        return dataBinding.root
+        return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

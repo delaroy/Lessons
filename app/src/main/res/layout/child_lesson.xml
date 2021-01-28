@@ -26,7 +26,8 @@
                 android:layout_margin="12dp"
                 android:id="@+id/thumbnail"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:contentDescription="@string/lesson_icon" />
 
             <TextView
                 android:id="@+id/child_textview"

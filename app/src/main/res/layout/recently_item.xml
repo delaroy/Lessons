@@ -34,8 +34,7 @@
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:transitionName="shared_element_container">
+        android:layout_height="100dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -54,9 +53,9 @@
                 app:imageUrl="@{subject.mediaUrl}"
                 app:transitionName="@{subject.subjectName}"
                 app:imageRequestListener="@{imageRequestListener}"
-                android:transitionName="transition"
                 android:src="@drawable/ic_launcher_background"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/lesson_icon" />
         </androidx.cardview.widget.CardView>
 
         <RelativeLayout
