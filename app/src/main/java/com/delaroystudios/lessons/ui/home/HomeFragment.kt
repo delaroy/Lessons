@@ -84,7 +84,6 @@ class HomeFragment : Fragment(), Injectable {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPlayerFragment(lesson.lessonName, lesson.mediaUrl, lesson.subjectName, lesson.id, lesson.chapterName))
         }
 
-
         binding.subjectRecyclerview.adapter = rvAdapter
         this.adapter = rvAdapter
 
@@ -107,18 +106,6 @@ class HomeFragment : Fragment(), Injectable {
 
         recentlyWatchedViewModel.repositories.observe(viewLifecycleOwner, Observer { rep ->
             madapter.submitList(rep?.data)
-            GlobalScope.launch(context = Dispatchers.Main) {
-                delay(2000)
-                if (rep.data != null) {
-                    if (rep?.data?.size!! < 1) {
-                        binding.recent.visibility = View.VISIBLE
-                    } else {
-                        binding.recent.visibility = View.GONE
-                    }
-                } else {
-                    binding.recent.visibility = View.VISIBLE
-                }
-            }
         })
     }
 }

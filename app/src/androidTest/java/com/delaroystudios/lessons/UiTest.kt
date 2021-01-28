@@ -27,7 +27,12 @@ class UiTest {
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun uiTest() {
+    fun homeUiTest() {
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
         val linearLayout = onView(
             allOf(
                 childAtPosition(
@@ -136,15 +141,41 @@ class UiTest {
         )
         appCompatImageButton3.perform(click())
 
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
         val linearLayout3 = onView(
             allOf(
-                withId(R.id.layout),
                 childAtPosition(
                     allOf(
-                        withId(R.id.recently_watched_recyclerview),
+                        withId(R.id.subject_recyclerview),
                         childAtPosition(
                             withClassName(`is`("android.widget.RelativeLayout")),
-                            3
+                            0
+                        )
+                    ),
+                    3
+                ),
+                isDisplayed()
+            )
+        )
+        linearLayout3.perform(click())
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
+        val linearLayout4 = onView(
+            allOf(
+                childAtPosition(
+                    allOf(
+                        withId(R.id.rv_child),
+                        childAtPosition(
+                            withClassName(`is`("android.widget.RelativeLayout")),
+                            1
                         )
                     ),
                     0
@@ -152,7 +183,7 @@ class UiTest {
                 isDisplayed()
             )
         )
-        linearLayout3.perform(click())
+        linearLayout4.perform(click())
 
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -199,6 +230,98 @@ class UiTest {
             )
         )
         appCompatImageButton5.perform(click())
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
+        val appCompatImageButton6 = onView(
+            allOf(
+                withContentDescription("Navigate up"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.action_bar),
+                        childAtPosition(
+                            withId(R.id.action_bar_container),
+                            0
+                        )
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageButton6.perform(click())
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
+        val linearLayout5 = onView(
+            allOf(
+                withId(R.id.layout),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.recently_watched_recyclerview),
+                        childAtPosition(
+                            withClassName(`is`("android.widget.RelativeLayout")),
+                            3
+                        )
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        linearLayout5.perform(click())
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(1000)
+
+        val appCompatImageButton7 = onView(
+            allOf(
+                withId(R.id.exo_play), withContentDescription("Play"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.exo_ll_controls),
+                        childAtPosition(
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            0
+                        )
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageButton7.perform(click())
+
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(5000)
+
+        val appCompatImageButton8 = onView(
+            allOf(
+                withContentDescription("Navigate up"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.action_bar),
+                        childAtPosition(
+                            withId(R.id.action_bar_container),
+                            0
+                        )
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatImageButton8.perform(click())
     }
 
     private fun childAtPosition(
